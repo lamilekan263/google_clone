@@ -26,7 +26,7 @@ const SearchInput = ({ hideButtons }) => {
         history.push('/search')
     }
     return (
-      <form className="search" onSubmit={ search }>
+      <form className="search" onSubmit={search}>
         <div className="search__input">
           <SearchIcon className="search__inputIcon" />
           <input value={input} onChange={(e) => setInput(e.target.value)} />
@@ -42,13 +42,12 @@ const SearchInput = ({ hideButtons }) => {
         ) : (
           <div className="search__buttons">
             <Button
-              className="searchbuttonsHidden"
-              
+              className="search__buttonsHidden"
               variant="outlined"
             >
               Google Search
             </Button>
-            <Button className="searchbuttonsHidden" variant="outlined">
+            <Button className="search__buttonsHidden" variant="outlined">
               I'm Feeling Lucky
             </Button>
           </div>
