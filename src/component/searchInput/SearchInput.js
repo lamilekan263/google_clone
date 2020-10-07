@@ -5,7 +5,7 @@ import { Button } from "@material-ui/core"
 import { useHistory } from 'react-router-dom';
 
 import { useStateValue } from '../../reducer/StateProvider'
-
+import { actionTypes } from '../../reducer/reducer'
 
 import './SearchInput.css'
 
@@ -13,14 +13,20 @@ const SearchInput = ({ hideButtons }) => {
     const [ {}, dispatch ] = useStateValue()
     const [input, setInput] = useState('');
     const history = useHistory()
-    const search = e  => {
-        e.preventDefault()
+    const search = (e) => {
+      e.preventDefault();
 
 
+      console.log(input)
+
+      dispatch({
+        type: actionTypes.SET_SEARCH_TERM,
+        term : input
+      })
         history.push('/search')
     }
     return (
-      <form className="search">
+      <form className="search" onSubmit={ search }>
         <div className="search__input">
           <SearchIcon className="search__inputIcon" />
           <input value={input} onChange={(e) => setInput(e.target.value)} />
@@ -37,7 +43,7 @@ const SearchInput = ({ hideButtons }) => {
           <div className="search__buttons">
             <Button
               className="searchbuttonsHidden"
-              onClick={search}
+              
               variant="outlined"
             >
               Google Search
