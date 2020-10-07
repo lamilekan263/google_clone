@@ -23,59 +23,61 @@ function Search() {
     const data = response
     console.log(data)
     
-     return (
-       <div className="searchPage">
-         <div className=".searchPage__header">
-           <Link to="/">
-             <img
-               className="searchPage__logo"
-               src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-               alt="google logo"
-             />
-           </Link>
-           <div className="searchPage__headerBody">
-             <SearchInput hideButtons />
-             <div className="searchPage__options">
-               <div className="searchPage__optionsLeft">
-                 <div className="searchPage__option">
-                   <SearchIcon />
-                   <Link to="/all">All</Link>
-                 </div>
-                 <div className="searchPage__option">
-                   <DescriptionIcon />
-                   <Link to="/news">News</Link>
-                 </div>
-                 <div className="searchPage__option">
-                   <ImageIcon />
-                   <Link to="/images">Images</Link>
-                 </div>
-                 <div className="searchPage__option">
-                   <LocalOfferIcon />
-                   <Link to="/shopping">Shopping</Link>
-                 </div>
-                 <div className="searchPage__option">
-                   <RoomIcon />
-                   <Link to="/maps">maps</Link>
-                 </div>
-                 <div className="searchPage__option">
-                   <MoreVertIcon />
-                   <Link to="/more">more</Link>
-                 </div>
-               </div>
-               <div className="searchPage__optionsRight">
-                 <div className="searchPage__option">
-                   <Link to="/settings">Settings</Link>
-                 </div>
-                 <div className="searchPage__option">
-                   <Link to="/tools">Tools</Link>
-                 </div>
-               </div>
-             </div>
-           </div>
+    return (
+        <div className="searchPage">
+            <div className="searchPage__header">
+                <Link to="/">
+                    <img
+                        className="searchPage__logo"
+                        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                        alt="google logo"
+                    />
+                </Link>
+                <div className="searchPage__headerBody">
+                    <SearchInput hideButtons />
+                    <div className="searchPage__options">
+                        <div className="searchPage__optionsLeft">
+                            <div className="searchPage__option">
+                                <SearchIcon />
+                                <Link to="/all">All</Link>
+                            </div>
+                            <div className="searchPage__option">
+                                <DescriptionIcon />
+                                <Link to="/news">News</Link>
+                            </div>
+                            <div className="searchPage__option">
+                                <ImageIcon />
+                                <Link to="/images">Images</Link>
+                            </div>
+                            <div className="searchPage__option">
+                                <LocalOfferIcon />
+                                <Link to="/shopping">Shopping</Link>
+                            </div>
+                            <div className="searchPage__option">
+                                <RoomIcon />
+                                <Link to="/maps">maps</Link>
+                            </div>
+                            <div className="searchPage__option">
+                                <MoreVertIcon />
+                                <Link to="/more">more</Link>
+                            </div>
+                        </div>
+                    <div className="searchPage__optionsRight">
+                        <div className="searchPage__option">
+                            <Link to="/settings">Settings</Link>
+                        </div>
+                        <div className="searchPage__option">
+                            <Link to="/tools">Tools</Link>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div className="searchPage__result">
+                
          </div>
-         <div className="searchPage__result"></div>
        </div>
-     );
+    );
 }
 
 export default Search
