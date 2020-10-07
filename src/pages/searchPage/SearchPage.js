@@ -9,18 +9,17 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import "./SearchPage.css";
 import { useStateValue } from '../../reducer/StateProvider'
 import useGoogleSearch from '../../useGoogleSearch';
-import response from '../../response';
 import SearchInput from '../../component/searchInput/SearchInput';
 
 function Search() {
 
     const [{ term }, dispatch] = useStateValue()
-    // const { data } = useGoogleSearch(term)
+    const { data } = useGoogleSearch(term)
 
     // https://developers.google.com/custom-search/v1/using_rest
     // https://cse.google.com/cse/create/new
 
-    const data = response
+   
     console.log(data)
     
     return (
@@ -81,7 +80,19 @@ function Search() {
             </p>
             {data?.items.map((item) => (
               <div className="searchPage__result">
-                <a href={item.link}>{item.displayLink}</a>
+                    <a href={item.link} className='searchPage__resultLink'>
+                        {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src &&(
+                            <img className='searchPage__resultImage' src={
+                            item.pagemap?.cse_image[0]?.src
+                            }
+                        alt=''
+                        />
+
+                        )
+
+                        }
+                        {item.displayLink}
+                    </a>
                     <a href={item.link} className='searchPage__resultTitle'>
                         <h2>{item.title}</h2>
                     </a>
